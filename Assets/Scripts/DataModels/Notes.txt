@@ -1,0 +1,1 @@
+when upgraded it rotates 2 times and then increases in size or a pop out animation

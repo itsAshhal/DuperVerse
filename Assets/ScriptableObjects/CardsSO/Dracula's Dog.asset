@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6cf7cebd918b4aa4d34a33918c679, type: 3}
+  m_Name: Dracula's Dog
+  m_EditorClassIdentifier: 
+  cardName: Dracula's Dog
+  category: 9
+  cardCategoryName: 
+  frontSprite: {fileID: 21300000, guid: dec93ef8302387a4b9296185703d4566, type: 3}
+  backSprite: {fileID: 21300000, guid: e3b6a1f4169d00f498a2ca1541549b74, type: 3}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  fight: 0
+  stamina: 0
+  strange: 0
+  LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
+  ProductID: 0

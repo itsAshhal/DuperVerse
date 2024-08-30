@@ -1,0 +1,472 @@
+{
+    "customers": [
+        {
+            "Email": "joeyprnc@yahoo.com",
+            "CustomerID": "7133769138343",
+            "FirstName": "Joey",
+            "LastName": "Prince",
+            "Orders": "10",
+            "TotalSpent": "246.15",
+            "LastOrderID": "5530061471911\r"
+        },
+        {
+            "Email": "duperherobrand@gmail.com",
+            "CustomerID": "7140851646631",
+            "FirstName": "Victor",
+            "LastName": "love",
+            "Orders": "1",
+            "TotalSpent": "0",
+            "LastOrderID": "5357948731559\r"
+        },
+        {
+            "Email": "joeyprnc@gmail.com",
+            "CustomerID": "7175001931943",
+            "FirstName": "Joey",
+            "LastName": "Prince",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "sofiacprince20@gmail.com",
+            "CustomerID": "7175010484391",
+            "FirstName": "Sofia",
+            "LastName": "Prince",
+            "Orders": "1",
+            "TotalSpent": "29.74",
+            "LastOrderID": "5412059807911\r"
+        },
+        {
+            "Email": "sarahdevine10@gmail.com",
+            "CustomerID": "7175780171943",
+            "FirstName": "Sarah",
+            "LastName": "Lovera",
+            "Orders": "1",
+            "TotalSpent": "28.98",
+            "LastOrderID": "5411239362727\r"
+        },
+        {
+            "Email": "victorflovera@gmail.com",
+            "CustomerID": "7175887945895",
+            "FirstName": "Victor",
+            "LastName": "Lovera",
+            "Orders": "5",
+            "TotalSpent": "200.17",
+            "LastOrderID": "5456615833767\r"
+        },
+        {
+            "Email": "gabrielaestrada0311@gmail.com",
+            "CustomerID": "7177605185703",
+            "FirstName": "gabi",
+            "LastName": "Estrada",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5429150089383\r"
+        },
+        {
+            "Email": "ivonnecaro555@gmail.com",
+            "CustomerID": "7180880117927",
+            "FirstName": "Ivonne",
+            "LastName": "Caro",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "rubberduckie1786@aol.com",
+            "CustomerID": "7180884639911",
+            "FirstName": "Kyla",
+            "LastName": "Gonzalez",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "mikegonz87@gmail.com",
+            "CustomerID": "7180885721255",
+            "FirstName": "Mike",
+            "LastName": "Gonzalez",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "bellalax28@gmail.com",
+            "CustomerID": "7180890144935",
+            "FirstName": "Isabella",
+            "LastName": "R",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "impinkjesilyn@gmail.com",
+            "CustomerID": "7180902891687",
+            "FirstName": "Jesilyn",
+            "LastName": "Impink",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "dragon1444@aol.com",
+            "CustomerID": "7180911771815",
+            "FirstName": "Morgan",
+            "LastName": "La Rue",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "kellybennett0428@aol.com",
+            "CustomerID": "7181046448295",
+            "FirstName": "Kelly",
+            "LastName": "Bennett",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "",
+            "CustomerID": "7222651060391",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "2boyzzmom@gmail.com",
+            "CustomerID": "7239548141735",
+            "FirstName": "Fedelia",
+            "LastName": "Spector",
+            "Orders": "1",
+            "TotalSpent": "28.98",
+            "LastOrderID": "5411115663527\r"
+        },
+        {
+            "Email": "victorandson26@gmail.com",
+            "CustomerID": "7266124071079",
+            "FirstName": "John",
+            "LastName": "Levine",
+            "Orders": "1",
+            "TotalSpent": "24.34",
+            "LastOrderID": "5425183686823\r"
+        },
+        {
+            "Email": "bellacaro444@gmail.com",
+            "CustomerID": "7266527248551",
+            "FirstName": "Bella",
+            "LastName": "Caro",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5425476272295\r"
+        },
+        {
+            "Email": "dianagolivera@hotmail.com",
+            "CustomerID": "7268402856103",
+            "FirstName": "Diana",
+            "LastName": "Olivera",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5426682265767\r"
+        },
+        {
+            "Email": "victorlovera@aol.com",
+            "CustomerID": "7268414718119",
+            "FirstName": "Daniel",
+            "LastName": "Fernandez",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5426691408039\r"
+        },
+        {
+            "Email": "johnnyl74@yahoo.com",
+            "CustomerID": "7269286641831",
+            "FirstName": "John",
+            "LastName": "Landrum",
+            "Orders": "1",
+            "TotalSpent": "28.98",
+            "LastOrderID": "5427537477799\r"
+        },
+        {
+            "Email": "theduperverse@gmail.com",
+            "CustomerID": "7269427511463",
+            "FirstName": "John",
+            "LastName": "Jackson",
+            "Orders": "1",
+            "TotalSpent": "24.34",
+            "LastOrderID": "5427655311527\r"
+        },
+        {
+            "Email": "test@noreply.com",
+            "CustomerID": "7271680442535",
+            "FirstName": "Test",
+            "LastName": "tess",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "karenlovera@icloud.com",
+            "CustomerID": "7272001798311",
+            "FirstName": "Karen",
+            "LastName": "Lovera",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5429067776167\r"
+        },
+        {
+            "Email": "carlosglovera@hotmail.com",
+            "CustomerID": "7276310593703",
+            "FirstName": "Carlos",
+            "LastName": "Lovera",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5430446162087\r"
+        },
+        {
+            "Email": "lisaptl@aol.com",
+            "CustomerID": "7277444071591",
+            "FirstName": "Lisa",
+            "LastName": "Brown",
+            "Orders": "1",
+            "TotalSpent": "38.98",
+            "LastOrderID": "5431382769831\r"
+        },
+        {
+            "Email": "soccerale11@outlook.com",
+            "CustomerID": "7277741277351",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "d.estrada2583@gmail.com",
+            "CustomerID": "7285863088295",
+            "FirstName": "Diana",
+            "LastName": "Estrada",
+            "Orders": "1",
+            "TotalSpent": "31.01",
+            "LastOrderID": "5434609991847\r"
+        },
+        {
+            "Email": "victorlovera313@gmail.com",
+            "CustomerID": "7290831405223",
+            "FirstName": "Fernando",
+            "LastName": "Mancini",
+            "Orders": "1",
+            "TotalSpent": "31.83",
+            "LastOrderID": "5435841249447\r"
+        },
+        {
+            "Email": "swingbuy123@gmail.com",
+            "CustomerID": "7457060061351",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "tarsilia.failla@gmail.com",
+            "CustomerID": "7480648040615",
+            "FirstName": "Tarsilia",
+            "LastName": "Failla",
+            "Orders": "1",
+            "TotalSpent": "118.26",
+            "LastOrderID": "5501484761255\r"
+        },
+        {
+            "Email": "alihaidermta@gmail.com",
+            "CustomerID": "7516364734631",
+            "FirstName": "Ali",
+            "LastName": "Haider",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "ashaldevgene@gmail.com",
+            "CustomerID": "7524747837607",
+            "FirstName": "Ashal",
+            "LastName": "Idrees",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "duperversecards@gmail.com",
+            "CustomerID": "7535795503271",
+            "FirstName": "Duperverse",
+            "LastName": "Cards",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": "\r"
+        },
+        {
+            "Email": "ciscooo0@yahoo.com",
+            "CustomerID": "7648513458343",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "1",
+            "TotalSpent": "27.33",
+            "LastOrderID": "5634026733735\r"
+        },
+        {
+            "Email": "janea.howle@gmail.com",
+            "CustomerID": "7648935444647",
+            "FirstName": "Janea",
+            "LastName": "Schlechter",
+            "Orders": "1",
+            "TotalSpent": "27.33",
+            "LastOrderID": "5634110095527\r"
+        },
+        {
+            "Email": "22luissas@gmail.com",
+            "CustomerID": "7649057669287",
+            "FirstName": "Luis",
+            "LastName": "Salas",
+            "Orders": "1",
+            "TotalSpent": "34.62",
+            "LastOrderID": "5634134802599\r"
+        },
+        {
+            "Email": "mikemangp@yahoo.com",
+            "CustomerID": "7651345563815",
+            "FirstName": "Michael",
+            "LastName": "Lenhart",
+            "Orders": "1",
+            "TotalSpent": "30.6",
+            "LastOrderID": "5634900000935\r"
+        },
+        {
+            "Email": "victorandson@gmail.com",
+            "CustomerID": "7651431022759",
+            "FirstName": "Devareus",
+            "LastName": "C",
+            "Orders": "1",
+            "TotalSpent": "25.97",
+            "LastOrderID": "5635009806503\r"
+        },
+        {
+            "Email": "kevinstatic@yahoo.com",
+            "CustomerID": "7651434692775",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "1",
+            "TotalSpent": "43.76",
+            "LastOrderID": "5635011969191\r"
+        },
+        {
+            "Email": "jayorp@gmail.com",
+            "CustomerID": "7651440853159",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "1",
+            "TotalSpent": "21.88",
+            "LastOrderID": "5635020783783\r"
+        },
+        {
+            "Email": "an.lo1988@gmail.com",
+            "CustomerID": "7651456352423",
+            "FirstName": "Anna",
+            "LastName": "P",
+            "Orders": "1",
+            "TotalSpent": "30.63",
+            "LastOrderID": "5635044835495\r"
+        },
+        {
+            "Email": "radicalandy123@gmail.com",
+            "CustomerID": "7651499737255",
+            "FirstName": "Andy",
+            "LastName": "R",
+            "Orders": "1",
+            "TotalSpent": "30.77",
+            "LastOrderID": "5635100508327\r"
+        },
+        {
+            "Email": "",
+            "CustomerID": "7651504259239",
+            "FirstName": "",
+            "LastName": "",
+            "Orders": "1",
+            "TotalSpent": "19.83",
+            "LastOrderID": "5635105554599\r"
+        },
+        {
+            "Email": "kaiyamostella@gmail.com",
+            "CustomerID": "7651513663655",
+            "FirstName": "Kaiya",
+            "LastName": "O",
+            "Orders": "1",
+            "TotalSpent": "21.88",
+            "LastOrderID": "5635120201895\r"
+        },
+        {
+            "Email": "bobinka42@gmail.com",
+            "CustomerID": "7651517071527",
+            "FirstName": "Katya",
+            "LastName": "Bobina",
+            "Orders": "1",
+            "TotalSpent": "21.85",
+            "LastOrderID": "5635126067367\r"
+        },
+        {
+            "Email": "shawnkinnear@ymail.com",
+            "CustomerID": "7651576578215",
+            "FirstName": "Shawn",
+            "LastName": "K",
+            "Orders": "1",
+            "TotalSpent": "27.45",
+            "LastOrderID": "5635201663143\r"
+        },
+        {
+            "Email": "gersainac@gmail.com",
+            "CustomerID": "7651686940839",
+            "FirstName": "Gersain",
+            "LastName": "Chavarria",
+            "Orders": "1",
+            "TotalSpent": "21.88",
+            "LastOrderID": "5635327361191\r"
+        },
+        {
+            "Email": "srothery@frontier.com",
+            "CustomerID": "7652484448423",
+            "FirstName": "Sundy",
+            "LastName": "Rothery",
+            "Orders": "1",
+            "TotalSpent": "30.59",
+            "LastOrderID": "5636067819687\r"
+        },
+        {
+            "Email": "",
+            "CustomerID": "7652503257255",
+            "FirstName": "David C",
+            "LastName": "Sarmento",
+            "Orders": "1",
+            "TotalSpent": "21.88",
+            "LastOrderID": "5636086104231\r"
+        },
+        {
+            "Email": "justinalan.zak@gmail.com",
+            "CustomerID": "7652558602407",
+            "FirstName": "Justin",
+            "LastName": "Zakrzewski",
+            "Orders": "1",
+            "TotalSpent": "22.15",
+            "LastOrderID": "5636152098983\r"
+        },
+        {
+            "Email": "davarieusfox@gmail.com",
+            "CustomerID": "7653145215143",
+            "FirstName": "Davarieus",
+            "LastName": "Fox",
+            "Orders": "0",
+            "TotalSpent": "0",
+            "LastOrderID": ""
+        }
+    ]
+}

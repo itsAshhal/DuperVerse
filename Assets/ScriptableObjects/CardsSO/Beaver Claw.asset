@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6cf7cebd918b4aa4d34a33918c679, type: 3}
+  m_Name: Beaver Claw
+  m_EditorClassIdentifier: 
+  cardName: Beaver Claw
+  category: 4
+  cardCategoryName: 
+  frontSprite: {fileID: 21300000, guid: 74812397bc112b641ab6ef7e2c6088e3, type: 3}
+  backSprite: {fileID: 21300000, guid: 3058a5308617a7545bf12ef588deae99, type: 3}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  fight: 0
+  stamina: 0
+  strange: 0
+  LowerBackground: {fileID: 21300000, guid: 040d3402eebc259458ca12ce8458e113, type: 3}
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
+  ProductID: 0

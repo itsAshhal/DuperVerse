@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6cf7cebd918b4aa4d34a33918c679, type: 3}
+  m_Name: Big Knife
+  m_EditorClassIdentifier: 
+  cardName: Big Knife
+  category: 1
+  cardCategoryName: 
+  frontSprite: {fileID: 21300000, guid: 1f8622dc87a3a9f49b206f857fee42f7, type: 3}
+  backSprite: {fileID: 21300000, guid: 19a110a0534b12c4cb958d3e4a8f877c, type: 3}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  fight: 0
+  stamina: 0
+  strange: 0
+  LowerBackground: {fileID: 21300000, guid: 1bec42faacedcf049bc471df789cd5f2, type: 3}
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
+  ProductID: 0

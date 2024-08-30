@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6cf7cebd918b4aa4d34a33918c679, type: 3}
+  m_Name: Astro Gnome
+  m_EditorClassIdentifier: 
+  cardName: Astro Gnome
+  category: 0
+  cardCategoryName: 
+  frontSprite: {fileID: 21300000, guid: e1948593098bb2f40836d129caa25364, type: 3}
+  backSprite: {fileID: 21300000, guid: d79590ea6aa242e499723a5340af699e, type: 3}
+  strength: 0
+  speed: 0
+  intelligence: 0
+  fight: 0
+  stamina: 0
+  strange: 0
+  LowerBackground: {fileID: 21300000, guid: b7f45d10e07dcec43b03caa93f8cf1a6, type: 3}
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
+  ProductID: 0

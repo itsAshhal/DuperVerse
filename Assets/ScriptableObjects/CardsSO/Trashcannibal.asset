@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trashcannibal
   m_EditorClassIdentifier: 
   cardName: Trashcannibal
-  category: 5
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 0887fdd34ab9d7e4f995b09f0daa282c, type: 3}
   backSprite: {fileID: 21300000, guid: eb82bd80443982545a2a45c31a8f1549, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 620691dee2c2f0741944ba90fc4ae445, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Trashcannibal.html
+  ProductID: 8107594481831

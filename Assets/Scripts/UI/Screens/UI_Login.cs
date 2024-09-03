@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using CBS;
-using Unity.Profiling.Editor;
+//using Unity.Profiling.Editor;
 using PlayFab;
 using PlayFab.ClientModels;
 using System.Security.Cryptography;

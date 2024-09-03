@@ -5,6 +5,9 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System.Collections.Generic;
 using System.IO;
+using System;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class Signup : UI_Panel
 {
@@ -50,17 +53,49 @@ public class Signup : UI_Panel
 
     private void LoadCustomerData()
     {
-        string path = Application.dataPath + "/customerData.json";
-        if (File.Exists(path))
+        StartCoroutine(FetchDataFromServer());
+    }
+
+    private IEnumerator FetchDataFromServer()
+    {
+        string dataUrl = "https://devgene.live/FetchUsers.php"; // URL to your PHP script
+        UnityWebRequest www = UnityWebRequest.Get(dataUrl);
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
         {
-            string json = File.ReadAllText(path);
-            customerDataList = JsonUtility.FromJson<CustomerDataList>(json);
+            Debug.LogError("Error while fetching data: " + www.error);
+            ShowError("Failed to load customer data.");
         }
         else
         {
-            Debug.LogError("Customer data file not found");
+            Debug.Log("Data fetched successfully.");
+            ProcessData(www.downloadHandler.text);
         }
     }
+
+    private void ProcessData(string jsonData)
+    {
+        try
+        {
+            customerDataList = JsonUtility.FromJson<CustomerDataList>(jsonData);
+            if (customerDataList != null && customerDataList.customers.Count > 0)
+            {
+                Debug.Log("Customer data loaded successfully.");
+            }
+            else
+            {
+                Debug.LogError("No data found or data parsing error.");
+                ShowError("No customer data available.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Error parsing JSON: " + ex.Message);
+            ShowError("Error loading customer data.");
+        }
+    }
+
 
     private void OnNextButtonClicked()
     {

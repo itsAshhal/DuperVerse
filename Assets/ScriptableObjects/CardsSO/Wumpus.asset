@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wumpus
   m_EditorClassIdentifier: 
   cardName: Wumpus
-  category: 5
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: ca3c21472ba006749827ad5661ac8125, type: 3}
   backSprite: {fileID: 21300000, guid: de936c180c36cab4babb19d1f4f0150e, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 620691dee2c2f0741944ba90fc4ae445, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Wumpus.html
+  ProductID: 8144046653607

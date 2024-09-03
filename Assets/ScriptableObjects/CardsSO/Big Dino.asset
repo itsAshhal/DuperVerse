@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Big Dino
   m_EditorClassIdentifier: 
   cardName: Big Dino
-  category: 9
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 4cf4bd61117488141bcec7dc7a238f17, type: 3}
   backSprite: {fileID: 21300000, guid: 4d4294bbbd26e8d418cd685d7edcaa99, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Big%20Dino.html
+  ProductID: 8020886913191

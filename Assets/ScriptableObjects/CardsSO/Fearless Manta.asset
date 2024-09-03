@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fearless Manta
   m_EditorClassIdentifier: 
   cardName: Fearless Manta
-  category: 9
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 3628c68a941534047a2fcdc6fe37cfa9, type: 3}
   backSprite: {fileID: 21300000, guid: 653d61d93ea091a41a8b130199fe69ce, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Fearless%20Manta.html
+  ProductID: 8029714677927

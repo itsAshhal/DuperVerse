@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lunar Lightning
   m_EditorClassIdentifier: 
   cardName: Lunar Lightning
-  category: 8
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 0bd4899fe1ea63f4699e626086473329, type: 3}
   backSprite: {fileID: 21300000, guid: db1cdd836339f5c4fa9bc43b008e0b0b, type: 3}
@@ -25,4 +25,4 @@ MonoBehaviour:
   strange: 0
   LowerBackground: {fileID: 21300000, guid: c286a5590b7df9b46b1f4d421c65f2c9, type: 3}
   BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  ProductID: 8170022371495

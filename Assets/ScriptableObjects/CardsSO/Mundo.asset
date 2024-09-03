@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mundo
   m_EditorClassIdentifier: 
   cardName: Mundo
-  category: 5
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 223e6cf46871ccb4387f39e411a937f8, type: 3}
   backSprite: {fileID: 21300000, guid: 01068ef5b3994aa4d8c4c0be1897c874, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 620691dee2c2f0741944ba90fc4ae445, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Mundo.html
+  ProductID: 8237176422567

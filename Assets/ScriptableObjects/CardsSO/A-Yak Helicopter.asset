@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A-Yak Helicopter
   m_EditorClassIdentifier: 
   cardName: A-Yak Helicopter
-  category: 9
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 0c02c4ab59e929342af7a069132cb9f1, type: 3}
   backSprite: {fileID: 21300000, guid: 4d311d68321a1ac49a6cb7a9d1d5e1ae, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/ayakhelicopter.html
   ProductID: 8135724892327

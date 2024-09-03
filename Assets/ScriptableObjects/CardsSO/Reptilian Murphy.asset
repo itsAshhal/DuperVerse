@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reptilian Murphy
   m_EditorClassIdentifier: 
   cardName: Reptilian Murphy
-  category: 4
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 14a79972e4bf07c488deb2ec646a20ca, type: 3}
   backSprite: {fileID: 21300000, guid: b8ee36cb757eb44499e4daf802e4c7b9, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: a70719bc0556566429e7d5b07fd55dda, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/ReptilianMurphy.html
+  ProductID: 8163213017255

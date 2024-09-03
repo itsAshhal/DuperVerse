@@ -93,11 +93,30 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GiveAwayAtFirstLogin()
     {
-        // as we only need to assign 5 random cards as per user requirements
-        for (int i = 0; i < 5; i++)
+        // Ensure the player receives 5 unique cards
+        HashSet<int> selectedIndices = new HashSet<int>();
+
+        while (selectedIndices.Count < 5 && selectedIndices.Count < allCards.Count)
         {
-            GiveAwayCards.Add(allCards[Random.Range(0, allCards.Count)]);
+            int randomIndex = Random.Range(0, allCards.Count);
+
+            // Ensure no duplicates
+            if (!selectedIndices.Contains(randomIndex))
+            {
+                selectedIndices.Add(randomIndex);
+                CardSO selectedCard = allCards[randomIndex];
+                GiveAwayCards.Add(selectedCard);
+
+                // Add to owned cards as well
+                ownedCards.Add(selectedCard);
+            }
         }
+
+        // Update the player's total owned cards count
+        userProfile.PlayerTotalOwnedCards += selectedIndices.Count;
+        // You might also want to save the updated profile here or update the UI
+        UI_Manager.Instance.ui_mainMenu.SetupUserProfile();
     }
+
 
 }

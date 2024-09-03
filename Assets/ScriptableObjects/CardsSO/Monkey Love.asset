@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monkey Love
   m_EditorClassIdentifier: 
   cardName: Monkey Love
-  category: 9
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 6e506391270f8624f9a03b7fbe80b59c, type: 3}
   backSprite: {fileID: 21300000, guid: da06346714bd2e64796ae08c361da376, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Monkey%20Love.html
+  ProductID: 8162591539367

@@ -1,16 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
 using UnityEngine.Networking;
 
 public class GoogleSheetsToJson : MonoBehaviour
 {
-    // Replace with your Google Sheets published CSV URL
-    [SerializeField]
-    private string googleSheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5xLXw9Mq3DsTtCqPTlUxeHSVdfsonrLyPccLO-nfxZH8RUs7xRT2FuOH2Cd-F3IhMUvAommOYVX-i/pub?output=csv";
+    // URL to your PHP script that fetches Google Sheets data
+    private string dataUrl = "https://devgene.live/FetchUsers.php";
 
     [System.Serializable]
     public class CustomerData
@@ -24,6 +20,7 @@ public class GoogleSheetsToJson : MonoBehaviour
         public string LastOrderID;
     }
 
+    [System.Serializable]
     public class CustomerDataList
     {
         public List<CustomerData> customers = new List<CustomerData>();
@@ -31,54 +28,56 @@ public class GoogleSheetsToJson : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(FetchGoogleSheetData());
+        StartCoroutine(FetchDataFromServer());
     }
 
-    private IEnumerator FetchGoogleSheetData()
+    private IEnumerator FetchDataFromServer()
     {
-        UnityWebRequest www = UnityWebRequest.Get(googleSheetUrl);
+        UnityWebRequest www = UnityWebRequest.Get(dataUrl);
+        Debug.Log("Sending request to server...");
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError(www.error);
+            Debug.LogError("Error while fetching data: " + www.error);
         }
         else
         {
-            ProcessCSV(www.downloadHandler.text);
+            Debug.Log("Data fetched successfully.");
+            ProcessData(www.downloadHandler.text);
         }
     }
 
-    private void ProcessCSV(string csvData)
+    private void ProcessData(string jsonData)
     {
-        string[] rows = csvData.Split('\n');
-        CustomerDataList customerDataList = new CustomerDataList();
-
-        for (int i = 1; i < rows.Length; i++)
+        Debug.Log("Processing data...");
+        CustomerDataList customerDataList = JsonUtility.FromJson<CustomerDataList>(jsonData);
+        if (customerDataList != null && customerDataList.customers.Count > 0)
         {
-            string[] cells = rows[i].Split(',');
-
-            if (cells.Length >= 7)
-            {
-                CustomerData customer = new CustomerData
-                {
-                    Email = cells[0],
-                    CustomerID = cells[1],
-                    FirstName = cells[2],
-                    LastName = cells[3],
-                    Orders = cells[4],
-                    TotalSpent = cells[5],
-                    LastOrderID = cells[6]
-                };
-                customerDataList.customers.Add(customer);
-            }
+            Debug.Log("Data processed and loaded: " + JsonUtility.ToJson(customerDataList, true));
+            // Optionally save to PlayerPrefs or handle data as needed
+            PlayerPrefs.SetString("CustomerData", JsonUtility.ToJson(customerDataList, true));
+            PlayerPrefs.Save();
         }
+        else
+        {
+            Debug.LogError("No data found or data parsing error.");
+        }
+    }
 
-        // Convert to JSON for use in Unity
-        string json = JsonUtility.ToJson(customerDataList, true);
-        Debug.Log(json);
-
-        // Save JSON to file or process as needed
-        System.IO.File.WriteAllText(Application.dataPath + "/customerData.json", json);
+    // Example method to load data from PlayerPrefs
+    public void LoadCustomerData()
+    {
+        if (PlayerPrefs.HasKey("CustomerData"))
+        {
+            string json = PlayerPrefs.GetString("CustomerData");
+            CustomerDataList loadedData = JsonUtility.FromJson<CustomerDataList>(json);
+            Debug.Log("Loaded data from PlayerPrefs.");
+            // Use loadedData as needed
+        }
+        else
+        {
+            Debug.LogError("No data found in PlayerPrefs.");
+        }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beaver Claw
   m_EditorClassIdentifier: 
   cardName: Beaver Claw
-  category: 4
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 74812397bc112b641ab6ef7e2c6088e3, type: 3}
   backSprite: {fileID: 21300000, guid: 3058a5308617a7545bf12ef588deae99, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 040d3402eebc259458ca12ce8458e113, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Beaver%20Claw.html
+  ProductID: 7968568377511

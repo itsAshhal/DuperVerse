@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gospel
   m_EditorClassIdentifier: 
   cardName: Gospel
-  category: 7
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 614c298803e50f543bcfd32c887651f2, type: 3}
   backSprite: {fileID: 21300000, guid: 137fd1654fa4ebb4c9be7ea8a9f174ed, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: b7f45d10e07dcec43b03caa93f8cf1a6, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Gospel.html
+  ProductID: 8067560341671

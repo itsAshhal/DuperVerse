@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BakeSale
   m_EditorClassIdentifier: 
   cardName: BakeSale
-  category: 7
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 97651f04c0b8e644b9f0ede24fba6407, type: 3}
   backSprite: {fileID: 21300000, guid: 840f80abce22a974da6b0d2200f1d08a, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 1bec42faacedcf049bc471df789cd5f2, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/BakeSale.html
+  ProductID: 8005797576871

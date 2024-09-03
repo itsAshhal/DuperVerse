@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Big Knife
   m_EditorClassIdentifier: 
   cardName: Big Knife
-  category: 1
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 1f8622dc87a3a9f49b206f857fee42f7, type: 3}
   backSprite: {fileID: 21300000, guid: 19a110a0534b12c4cb958d3e4a8f877c, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   stamina: 0
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 1bec42faacedcf049bc471df789cd5f2, type: 3}
-  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/Big%20Knife.html
+  ProductID: 8015859384487

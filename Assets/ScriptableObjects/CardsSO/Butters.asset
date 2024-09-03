@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Butters
   m_EditorClassIdentifier: 
   cardName: Butters
-  category: 9
+  category: 0
   cardCategoryName: 
   frontSprite: {fileID: 21300000, guid: 9d68a64305a84884d89fc2ef09d2621b, type: 3}
   backSprite: {fileID: 21300000, guid: d111b53727220e64d97e9617216f4fac, type: 3}
@@ -25,4 +25,4 @@ MonoBehaviour:
   strange: 0
   LowerBackground: {fileID: 21300000, guid: 18230be43411579479ab8f00bbc3ba87, type: 3}
   BuyButtonURL: https://alihaidermta.github.io/duperverse_buttons/
-  ProductID: 0
+  ProductID: 8157975675047

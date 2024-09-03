@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: A-Yak Helicopter
   category: 0
   cardCategoryName: 
-  frontSprite: {fileID: 21300000, guid: 0c02c4ab59e929342af7a069132cb9f1, type: 3}
+  frontSprite: {fileID: 21300000, guid: f5b858430e45ad54194670f3ca5789a5, type: 3}
   backSprite: {fileID: 21300000, guid: 4d311d68321a1ac49a6cb7a9d1d5e1ae, type: 3}
   strength: 0
   speed: 0

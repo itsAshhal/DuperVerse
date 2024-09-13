@@ -48,29 +48,39 @@ public class UI_Manager : MonoBehaviour
 
     public UI_Panel OpenPanel(Type panelType, bool closeLastOpened = true)
     {
-        if (stopOpenningPanels) return null;
-
-        Debug.Log("NewPanel Opened");
-
-        if (closeLastOpened && currentOpenedPanels.Count > 0)
+        try
         {
-            CloseLastOpenedPanel();
+            Debug.Log($"Open panel called");
+            if (stopOpenningPanels) return null;
+
+            Debug.Log("NewPanel Opened");
+
+            if (closeLastOpened && currentOpenedPanels.Count > 0)
+            {
+                CloseLastOpenedPanel();
+            }
+
+            GameObject newPanel = Instantiate(UI_PanelPrefabs.Find(x => x.GetComponent<UI_Panel>().GetType().Equals(panelType)).gameObject, uiParent);
+            Debug.Log($"NewPanel instantiated is {newPanel.name}");
+
+            currentOpenedPanels.Push(newPanel);
+
+            //Debug.Log ("opening panel: " + panelType);
+            if (panelType == typeof(UI_MainMenu))
+            {
+                Debug.Log("MainMenu Finalized");
+                this.OwnedCardsParent = newPanel.GetComponent<UI_MainMenu>().ownedCardsParent;  // as this is the mainMenu prefab.
+                this.ui_mainMenu = newPanel.GetComponent<UI_MainMenu>(); ;
+                //PlayfabController.Instance.GetAllCardsAtOnce();
+            }
+            return newPanel.GetComponent<UI_Panel>();
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"In openPanel function there's an exception, {e.Message}");
         }
 
-        GameObject newPanel = Instantiate(UI_PanelPrefabs.Find(x => x.GetComponent<UI_Panel>().GetType().Equals(panelType)).gameObject, uiParent);
-        Debug.Log($"NewPanel instantiated is {newPanel.name}");
-
-        currentOpenedPanels.Push(newPanel);
-
-        //Debug.Log ("opening panel: " + panelType);
-        if (panelType == typeof(UI_MainMenu))
-        {
-            Debug.Log("MainMenu Finalized");
-            this.OwnedCardsParent = newPanel.GetComponent<UI_MainMenu>().ownedCardsParent;  // as this is the mainMenu prefab.
-            this.ui_mainMenu = newPanel.GetComponent<UI_MainMenu>(); ;
-            //PlayfabController.Instance.GetAllCardsAtOnce();
-        }
-        return newPanel.GetComponent<UI_Panel>();
+        return null;
 
     }
 

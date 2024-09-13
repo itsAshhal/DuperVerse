@@ -27,6 +27,9 @@ public class UI_MainMenu : UI_Panel
     public Text playerTotalCardsText;
     public Sprite[] Avatars;
     public Image AvatarPlaceholder;
+    [Header("Specific boolean for Avatar API")]
+    public bool IsAvatarApiCalled = false;
+
     void Start()
     {
         playBtn.onClick.AddListener(OnClick_Play);
@@ -53,7 +56,7 @@ public class UI_MainMenu : UI_Panel
         playerLevelText.text = userProfile.PlayerLevel;
 
         // use avatar sesction as well
-        GetAvatarIndexFromPlayFab();
+        //GetAvatarIndexFromPlayFab();
 
         if (GameManager.instance.userProfile.CurrentUserStatus == UserProfileSO.UserStatus.New) GameManager.instance.GiveAwayAtFirstLogin();
 
@@ -238,6 +241,13 @@ public class UI_MainMenu : UI_Panel
 
     private void GetAvatarIndexFromPlayFab()
     {
+        Debug.Log($"Avatar index function called");
+
+        // we need to make sure this method doesn't get called so many times because this is an api
+        if (IsAvatarApiCalled) return;
+
+        IsAvatarApiCalled = true;
+
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataReceived, OnDataReceiveError);
     }
 

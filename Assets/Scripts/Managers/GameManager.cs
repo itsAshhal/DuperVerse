@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GiveAwayAtFirstLogin()
     {
+        return;
         // Ensure the player receives 5 unique cards
         HashSet<int> selectedIndices = new HashSet<int>();
 

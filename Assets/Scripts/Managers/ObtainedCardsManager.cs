@@ -20,6 +20,75 @@ public class ObtainedCardsManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    public void UploadMultipleCards(List<string> cardNames, List<List<float>> statsLists, string cardCategory)
+    {
+        // Log all card names for debugging
+        foreach (var cardName in cardNames)
+        {
+            Debug.Log($"Card Name: {cardName}");
+        }
+
+        ProfileModule = CBSModule.Get<CBSProfileModule>();
+        var profileDataKey = "OwnedCards";
+
+        // Fetch existing data if available
+        ProfileModule.GetProfileData(profileDataKey, (result) =>
+        {
+            List<CardSO> cardList = new List<CardSO>();
+
+            if (result.IsSuccess && result.Data != null && result.Data.Count > 0)
+            {
+                // Deserialize existing data
+                var dataDictionary = result.Data;
+
+                foreach (var kvp in dataDictionary)
+                {
+                    string jsonValue = kvp.Value.Value;
+                    List<CardSO> existingCards = CardsJSON_Manager.FromJSON(jsonValue);
+                    cardList.AddRange(existingCards);
+                }
+            }
+
+            // Create new CardSO objects from provided data
+            for (int i = 0; i < cardNames.Count; i++)
+            {
+                CardSO newCard = new CardSO
+                {
+                    cardName = cardNames[i],
+                    strength = 0f, // Default value
+                    speed = statsLists[i][0],
+                    intelligence = statsLists[i][1],
+                    fight = statsLists[i][2],
+                    stamina = statsLists[i][3],
+                    strange = statsLists[i][4],
+                    cardCategoryName = cardCategory,
+                };
+
+                // Add the new card to the list
+                cardList.Add(newCard);
+            }
+
+            Debug.Log($"New cards added: {cardNames.Count}");
+
+            // Convert list to JSON and save
+            string newDataJson = CardsJSON_Manager.ToJSON(cardList);
+
+            ProfileModule.SaveProfileData(profileDataKey, newDataJson, (saveResult) =>
+            {
+                if (saveResult.IsSuccess)
+                {
+                    Debug.Log("Data saved successfully!");
+                    Fetch("OwnedCards");
+                }
+                else
+                {
+                    Debug.Log(saveResult.Error.Message);
+                }
+            });
+        });
+    }
+
+
     public void Upload(string cardName, List<float> statsList, string cardCategory, UI_ZoomedCard zoomedCard)
     {
         foreach (var stat in statsList)

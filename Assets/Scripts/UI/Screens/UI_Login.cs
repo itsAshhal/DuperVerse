@@ -23,56 +23,72 @@ public class UI_Login : UI_Panel
 
         loginBtn.onClick.AddListener(OnClick_Login);
         BackBtn.onClick.AddListener(OnClick_Back);
+
+        Debug.Log($"UILogin started");
+
+        AssetManager.Instance.SetTexts();
+
+
     }
     public void OnClick_Login()
     {
-        SoundManager.Instance.PlayButtonSound(0);
+        if (PlayerPrefs.HasKey("UserEmail"))
+        {
+            AutoLogin();
+            return;
+        }
+
+
+
+        Debug.Log($"LoginTest, loginClicked");
+        //SoundManager.Instance.PlayButtonSound(0);
 
         loginBtn.interactable = false;
 
-        //AuthModule.LoginWithDevice((res) =>
-        //{
-        //    if (res.IsSuccess)
-        //    {
-        //        // logic for getting displayName
-        //        ProfileModule = CBSModule.Get<CBSProfileModule>();
+        AuthModule.LoginWithDevice((res) =>
+        {
+            if (res.IsSuccess)
+            {
+                // logic for getting displayName
+                ProfileModule = CBSModule.Get<CBSProfileModule>();
 
-        //        var playFabID = res.ProfileID;
+                var playFabID = res.ProfileID;
 
-        //        ProfileModule.GetProfileAccountInfo(playFabID, (res) =>
-        //        {
-        //            // the result for getting the account information
-        //            if (res.IsSuccess)
-        //            {
-        //                // Checking
-        //                Debug.Log($"DisplayName {res.DisplayName}");
+                ProfileModule.GetProfileAccountInfo(playFabID, (res) =>
+                {
+                    // the result for getting the account information
+                    if (res.IsSuccess)
+                    {
+                        // Checking
+                        Debug.Log($"DisplayName {res.DisplayName}");
 
-        //                // Updating the display name for the user from the GameManager
-        //                GameManager.instance.userProfile.PlayerName = res.DisplayName;
+                        // Updating the display name for the user from the GameManager
+                        GameManager.instance.userProfile.PlayerName = res.DisplayName;
+                        GameManager.instance.userProfile.CurrentUserStatus = UserProfileSO.UserStatus.New;
 
-        //                // after getting displayName, get the total cards, as he must have some
-        //                /*// just use the Fetch method from the ObtainedCardsManager
-        //                ObtainedCardsManager.Instance.Fetch("OwnedCards");
+                        // after getting displayName, get the total cards, as he must have some
+                        /*// just use the Fetch method from the ObtainedCardsManager
+                        ObtainedCardsManager.Instance.Fetch("OwnedCards");
 
-        //                // now obtain the PlayerLevel as well
-        //                ObtainedCardsManager.Instance.Fetch("PlayerLevel");*/
+                        // now obtain the PlayerLevel as well
+                        ObtainedCardsManager.Instance.Fetch("PlayerLevel");*/
 
-        //                StartCoroutine(OnLoginSucc());
-        //            }
-        //            else Debug.Log($"Error getting display name");
+                        StartCoroutine(OnLoginSucc());
+                    }
+                    else Debug.Log($"Error getting display name");
 
-        //            loginBtn.interactable = true;
-        //        });
+                    loginBtn.interactable = true;
+                });
 
-        //        // previous loginCoroutine()
-        //    }
-        //    else
-        //    {
-        //        Debug.LogError($"{res.Error.Message}");
-        //        //Debug.Log("Error");
-        //    }
-        //    loginBtn.interactable = true;
-        //});
+                // previous loginCoroutine()
+            }
+            else
+            {
+                Debug.LogError($"{res.Error.Message}");
+                //Debug.Log("Error");
+            }
+            loginBtn.interactable = true;
+        });
         if (!PlayerPrefs.HasKey("NewUser"))
         {
             UI_Manager.Instance.CloseAllPanels();
@@ -121,13 +137,16 @@ public class UI_Login : UI_Panel
         string email = PlayerPrefs.GetString("UserEmail");
         string password = PlayerPrefs.GetString("Password");
 
+        Debug.Log($"AutoLogin, email is {email}");
+        Debug.Log($"AutoLogin, password is {password}");
+
         // trying login with Email and Password using CBS
         var loginReq = new CBSMailLoginRequest
         {
             Mail = email,
             Password = password
         };
-        AuthModule.LoginWithMailAndPassword(loginReq, res =>
+        AuthModule.LoginWithDevice(res =>
         {
             if (res.IsSuccess)
             {
@@ -143,6 +162,7 @@ public class UI_Login : UI_Panel
                     if (res.IsSuccess)
                     {
                         // Checking
+                        Debug.Log($"Checking autoLogin, DisplayName is {res.DisplayName}");
                         Debug.Log($"DisplayName {res.DisplayName}");
 
                         // Updating the display name for the user from the GameManager
@@ -159,8 +179,11 @@ public class UI_Login : UI_Panel
                         Debug.Log($"Finally in the main domain");
                         Debug.Log("Login successful: " + playFabID);
                         PlayerPrefs.SetInt("NewUser", 0);
+
                         /*UI_Manager.Instance.CloseAllPanels();
                         UI_Manager.Instance.OpenPanel(typeof(UI_MainMenu));*/
+
+                        GameManager.instance.userProfile.CurrentUserStatus = UserProfileSO.UserStatus.Old;
 
                         loginCallBack();
                     }

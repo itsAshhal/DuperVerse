@@ -41,6 +41,9 @@ public class Signup : UI_Panel
     {
         InitializeUI();
         LoadCustomerData();
+
+
+        AssetManager.Instance.SetTexts();
     }
 
     private void InitializeUI()

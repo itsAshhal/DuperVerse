@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using PlayFab.ClientModels;
 using PlayFab;
+using System;
+using Random = UnityEngine.Random;
 
 public class UI_MainMenu : UI_Panel
 {
@@ -29,9 +31,16 @@ public class UI_MainMenu : UI_Panel
     public Image AvatarPlaceholder;
     [Header("Specific boolean for Avatar API")]
     public bool IsAvatarApiCalled = false;
+    public List<GameObject> OriginalCards = new List<GameObject>();
+
+    public Image[] GiveAwayCardsImages = new Image[0];
+    public GameObject GiveAwayScreen;
+
 
     void Start()
     {
+        AssetManager.Instance.SetTexts();
+
         playBtn.onClick.AddListener(OnClick_Play);
         BackBtn.onClick.AddListener(OnClick_Back);
         settingBtn.onClick.AddListener(OnClick_Settings);
@@ -44,10 +53,108 @@ public class UI_MainMenu : UI_Panel
         InitCards();
         SetupUserProfile();
 
+        // setting avatarSprite to 1st index as there is no customization option right now
+        AvatarPlaceholder.sprite = Avatars[0];
+
+        GiveAwayCards();
+
 
         if (PlayerPrefs.HasKey("UserEmail")) Debug.Log("User is logging for the second time");
         else Debug.Log($"User is logging for the second time");
+
+
+        InvokeRepeating(nameof(KeepUpdatingTotalCards), 5f, .5f);
     }
+
+
+    void KeepUpdatingTotalCards()
+    {
+        playerTotalCardsText.text = GameManager.instance.ownedCards.Count.ToString();
+    }
+
+
+    public void GiveAwayCards()
+    {
+        // assign any 5 cards on first time creating an account
+        if (GameManager.instance.userProfile.CurrentUserStatus == UserProfileSO.UserStatus.Old)
+        {
+            GiveAwayScreen.SetActive(false);
+            return;
+        }
+
+        List<CardSO> giveAwayCards = new List<CardSO>();
+        List<string> cardsDone = new List<string>();
+
+        int counterIndex = 0;
+        while (counterIndex < 5)
+        {
+            int randomIndex = Random.Range(0, GiveAwayCardsImages.Length);
+            var card = GameManager.instance.allCards[randomIndex];
+
+            // first check if it already exists
+            if (cardsDone.Contains(card.cardName)) continue;
+
+            // If not already added, add the card to the list and update the image
+            giveAwayCards.Add(card);
+            cardsDone.Add(card.cardName);
+            GiveAwayCardsImages[counterIndex].sprite = card.frontSprite;
+            counterIndex++;
+        }
+
+        // After collecting all cards, upload them once
+        StartCoroutine(UploadGiveAwayCards(giveAwayCards));
+    }
+
+    IEnumerator UploadGiveAwayCards(List<CardSO> cards)
+    {
+        Debug.Log($"Uploading give away cards");
+
+        // Create a list to hold stats for all cards
+        List<string> cardNames = new List<string>();
+        List<List<float>> cardStats = new List<List<float>>();
+
+        foreach (var card in cards)
+        {
+            Debug.Log($"Inside cardUploading, card is {card.cardName}");
+
+            // Prepare the stats for the card
+            List<float> statsList = new List<float> { .1f, .1f, .1f, .1f, .1f };
+            cardNames.Add(card.cardName);
+            cardStats.Add(statsList);
+
+            // Optionally wait between cards if needed
+            yield return new WaitForSeconds(.5f);
+        }
+
+        // Call the Upload2 method with the collected data
+        ObtainedCardsManager.Instance.UploadMultipleCards(cardNames, cardStats, cards[0].cardCategoryName);
+    }
+
+    public void OnInputField_Search(string search)
+    {
+        string trimmedSearch = search.Trim();
+
+        // If the search is empty, show all cards
+        if (string.IsNullOrEmpty(trimmedSearch))
+        {
+            foreach (var card in OriginalCards)
+            {
+                card.SetActive(true);
+            }
+            return;
+        }
+
+        // Show matching cards
+        foreach (var card in OriginalCards)
+        {
+            if (card.name.IndexOf(trimmedSearch, StringComparison.OrdinalIgnoreCase) >= 0)
+                card.SetActive(true);
+            else
+                card.SetActive(false);
+        }
+    }
+
+
 
     public void SetupUserProfile()
     {
@@ -102,12 +209,14 @@ public class UI_MainMenu : UI_Panel
 
 
 
+
     public GameObject cardPrefab;   // Prefab for the card group that holds four cards
     public Transform content;            // The content object of the ScrollView
 
-    void InstantiateAllCards()
+    public void InstantiateAllCards()
     {
         // Clear previous content objects
+        Debug.Log($"AllCards are instantiated");
         if (content.childCount > 0)
         {
             foreach (Transform child in content)
@@ -120,6 +229,9 @@ public class UI_MainMenu : UI_Panel
         {
             GameObject prefab = Instantiate(cardPrefab, content);
             prefab.SetActive(true);
+
+            OriginalCards.Add(prefab);
+            prefab.gameObject.name = card.cardName;
 
             Transform cardTransform = prefab.transform;
             Image cardImage = cardTransform.GetComponent<Image>();
@@ -156,6 +268,8 @@ public class UI_MainMenu : UI_Panel
             GameObject prefab = Instantiate(cardPrefab, content);
             prefab.SetActive(true);
 
+
+
             Transform cardTransform = prefab.transform;
             Image cardImage = cardTransform.GetComponent<Image>();
             cardImage.sprite = card.frontSprite;
@@ -173,7 +287,7 @@ public class UI_MainMenu : UI_Panel
 
     public void ShowCategorySpecificCards(CardCategory category)
     {
-
+        return;
         // Clear previous content objects
         if (content.childCount > 0)
         {

@@ -14,6 +14,7 @@ public class CategoriesLoader : MonoBehaviour
     [SerializeField] GameObject dropDownObject;
     [SerializeField] Transform content;
     [SerializeField] GameObject categoryContentPrefab;
+    [SerializeField] TMP_Text _mainCategoryText;
 
     private void Start()
     {
@@ -25,18 +26,20 @@ public class CategoriesLoader : MonoBehaviour
 
     private void DestroyAllChildren()
     {
-        foreach(Transform i in content)
+        foreach (Transform i in content)
         {
             Destroy(i.gameObject);
         }
+
+        //GameObject.FindObjectOfType<UI_MainMenu>().InstantiateAllCards();
     }
 
     private void InitBtn()
     {
         categoryBtn.onClick.RemoveAllListeners();
-        categoryBtn.onClick.AddListener(() => 
+        categoryBtn.onClick.AddListener(() =>
         {
-            if(dropDownObject.activeInHierarchy)
+            if (dropDownObject.activeInHierarchy)
                 dropDownObject.SetActive(false);
             else
                 dropDownObject.SetActive(true);
@@ -48,11 +51,24 @@ public class CategoriesLoader : MonoBehaviour
         foreach (CardCategory value in Enum.GetValues(typeof(CardCategory)))
         {
             GameObject btn = Instantiate(categoryContentPrefab, content);
+
             btn.GetComponentInChildren<TMP_Text>().text = value.ToString();
+            btn.gameObject.name = value.ToString();
             btn.GetComponent<Button>().onClick.RemoveAllListeners();
             btn.GetComponent<Button>().onClick.AddListener(() => { mainMenu.ShowCategorySpecificCards(value); });
+            var newComponent = btn.AddComponent<CategoryButton>();
+            newComponent.MainCategoryTitle = this._mainCategoryText;
         }
+
+        //  foreach (Transform i in content)
+        // {
+        //     Destroy(i.gameObject);
+        // }
+
+        //GameObject.FindObjectOfType<UI_MainMenu>().InstantiateAllCards();
     }
+
+
 
 
 }

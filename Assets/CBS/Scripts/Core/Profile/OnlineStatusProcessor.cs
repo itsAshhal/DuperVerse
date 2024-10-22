@@ -32,6 +32,7 @@ namespace CBS
 
         public void StartUpdate()
         {
+            return;
             IsStarted = true;
             if (UpdateBehavior == OnlineStatusBehavior.LOOP_UPDATE)
             {

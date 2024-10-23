@@ -36,6 +36,8 @@ public class UI_MainMenu : UI_Panel
     public Image[] GiveAwayCardsImages = new Image[0];
     public GameObject GiveAwayScreen;
 
+    public GameObject DontShowThisAgainScreen;
+
 
     void Start()
     {
@@ -48,6 +50,15 @@ public class UI_MainMenu : UI_Panel
         //allCardsBtn.onClick.AddListener(OnClick_AllCards);
         //ownedCardsBtn.onClick.AddListener(OnClick_OwnedCards);
         categoryDropDownBtn.onClick.AddListener(OnClick_CategoryDropDown);
+
+        if (PlayerPrefs.HasKey("DontShowThisAgain") || PlayerPrefs.GetInt("DontShowThisAgain") == 1)
+        {
+            DontShowThisAgainScreen.SetActive(false);
+        }
+        else
+        {
+            DontShowThisAgainScreen.SetActive(true);
+        }
 
 
         InitCards();
@@ -64,6 +75,19 @@ public class UI_MainMenu : UI_Panel
 
 
         InvokeRepeating(nameof(KeepUpdatingTotalCards), 5f, .5f);
+    }
+
+    public void OnClick_DontShowThisAgain(Image image)
+    {
+        image.enabled = !image.enabled;
+        if (image.enabled)
+        {
+            PlayerPrefs.SetInt("DontShowThisAgain", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("DontShowThisAgain", 0);
+        }
     }
 
 
